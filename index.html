@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Daffa Atha Rizq — Informatics Graduate | Data Science & ML</title>
+<meta name="description" content="Portofolio Muhammad Daffa Atha Rizq — Informatics Graduate, Data Science & Machine Learning Specialist.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          base: '#020617',
+          panel: '#0b1220',
+          panel2: '#111b2e',
+          line: '#233046',
+          ink: '#e4e9f2',
+          muted: '#8291ab',
+          indigo: { DEFAULT: '#6366f1', light: '#9497f5' },
+          cyan: { DEFAULT: '#22d3ee', light: '#67e3f3' },
+        },
+        fontFamily: {
+          sans: ['"IBM Plex Sans"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #020617;
+    background-image:
+      linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  ::selection { background: #6366f1; color: #020617; }
+
+  .kicker::before { content: '> '; color: #22d3ee; }
+
+  .glow-border { position: relative; }
+  .glow-border:hover {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 1px rgba(99,102,241,0.35), 0 0 24px -8px rgba(34,211,238,0.35);
+  }
+
+  .cursor-blink {
+    display: inline-block; width: 8px; height: 1.1em; background: #22d3ee;
+    margin-left: 6px; vertical-align: -2px;
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .spark-path {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 1.8s ease-out forwards 0.3s;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0;
+    background: #22d3ee; transition: width 0.25s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+
+  #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; }
+
+  a, button { transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  :focus-visible { outline: 2px solid #22d3ee; outline-offset: 2px; }
+</style>
+</head>
+
+<body class="bg-base text-ink font-sans antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-line/70 bg-base/80 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+    <a href="#home" class="font-mono text-sm text-ink hover:text-cyan">
+      Daffa<span class="text-cyan">.dev</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm text-muted">
+      <a href="#home" class="nav-link hover:text-ink">Home</a>
+      <a href="#about" class="nav-link hover:text-ink">About</a>
+      <a href="#skills" class="nav-link hover:text-ink">Skills</a>
+      <a href="#projects" class="nav-link hover:text-ink">Projects</a>
+      <a href="#experience" class="nav-link hover:text-ink">Experience</a>
+      <a href="#education" class="nav-link hover:text-ink">Education</a>
+      <a href="#contact" class="nav-link hover:text-ink">Contact</a>
+    </nav>
+
+    <button id="menu-btn" class="md:hidden text-ink" aria-label="Buka menu" aria-expanded="false">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 opacity-0 border-t border-line/70 bg-base">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-sm text-muted">
+      <a href="#home" class="mobile-link hover:text-ink">Home</a>
+      <a href="#about" class="mobile-link hover:text-ink">About</a>
+      <a href="#skills" class="mobile-link hover:text-ink">Skills</a>
+      <a href="#projects" class="mobile-link hover:text-ink">Projects</a>
+      <a href="#experience" class="mobile-link hover:text-ink">Experience</a>
+      <a href="#education" class="mobile-link hover:text-ink">Education</a>
+      <a href="#contact" class="mobile-link hover:text-ink">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-16">
+
+<!-- ============ HERO ============ -->
+<section id="home" class="max-w-6xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-5 gap-12 items-center">
+
+  <div class="md:col-span-3">
+    <p class="font-mono text-sm kicker text-muted mb-5">whoami</p>
+    <h1 class="text-4xl sm:text-5xl font-semibold leading-[1.1] tracking-tight text-ink">
+      Muhammad Daffa<br>Atha Rizq
+    </h1>
+    <p class="mt-4 text-lg sm:text-xl text-indigo-light font-medium">
+      Informatics Graduate — Data Science &amp; Machine Learning Specialist
+    </p>
+    <p class="mt-6 text-muted leading-relaxed max-w-xl">
+      Lulusan Sarjana Informatika yang berfokus pada pemodelan Machine Learning &amp; Deep Learning,
+      time-series demand forecasting, sistem rekomendasi hybrid, serta manajemen data operasional.
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-2 font-mono text-xs text-cyan-light">
+      <span class="px-3 py-1 border border-line rounded">S1 Informatika · IPK 3.00</span>
+      <span class="px-3 py-1 border border-line rounded">Machine Learning</span>
+      <span class="px-3 py-1 border border-line rounded">Data Analytics</span>
+    </div>
+
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a href="#projects" class="px-5 py-2.5 bg-indigo hover:bg-indigo-light text-white text-sm font-medium rounded">
+        Lihat Proyek
+      </a>
+      <a href="cv.pdf" download class="px-5 py-2.5 border border-line hover:border-cyan text-ink text-sm font-medium rounded flex items-center gap-2">
+        <i data-lucide="download" class="w-4 h-4"></i> Unduh CV
+      </a>
+      <a href="#contact" class="px-5 py-2.5 text-muted hover:text-cyan text-sm font-medium flex items-center gap-2">
+        Hubungi Saya <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Dashboard readout panel -->
+  <div class="md:col-span-2">
+    <div class="border border-line bg-panel rounded-lg overflow-hidden glow-border">
+      <div class="flex items-center gap-1.5 px-4 py-2.5 border-b border-line bg-panel2">
+        <span class="w-2.5 h-2.5 rounded-full bg-line"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-line"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-line"></span>
+        <span class="ml-3 font-mono text-xs text-muted">model_summary.log</span>
+      </div>
+      <div class="p-5 font-mono text-xs sm:text-sm space-y-3">
+        <p class="text-muted">$ evaluate best_model --dataset ecommerce_tx.csv</p>
+        <p class="text-cyan-light">rows_processed <span class="text-ink">2,900,000+</span></p>
+        <p class="text-cyan-light">model <span class="text-ink">XGBoost Regressor</span></p>
+        <p class="text-cyan-light">RMSE <span class="text-ink">0.626</span></p>
+        <p class="text-cyan-light">MAE <span class="text-ink">0.293</span></p>
+        <p class="text-cyan-light">R&sup2; <span class="text-ink">0.630</span></p>
+
+        <svg viewBox="0 0 260 60" class="w-full h-14 mt-2">
+          <polyline class="spark-path" points="0,45 30,40 60,42 90,28 120,32 150,18 180,22 210,10 240,14" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <p class="text-muted">status: <span class="text-indigo-light">ready for deployment</span><span class="cursor-blink"></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="max-w-6xl mx-auto px-6 py-16 md:py-24 border-t border-line/70">
+  <p class="font-mono text-sm kicker text-muted mb-3">about</p>
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-8">Ringkasan profil</h2>
+
+  <div class="grid md:grid-cols-2 gap-8 text-muted leading-relaxed">
+    <p>
+      Lulusan S1 Informatika dari <span class="text-ink">Universitas Gunadarma</span> (IPK 3.00). Memiliki keahlian
+      kuat dalam membangun <span class="text-ink">end-to-end Machine Learning pipeline</span> berbasis kerangka
+      CRISP-DM, pengolahan dataset skala besar (>2,9 juta transaksi), dan pembuatan aplikasi web interaktif.
+    </p>
+    <p>
+      Memiliki kombinasi unik antara kemampuan riset teknis AI dengan pengalaman praktis di lapangan dalam
+      administrasi logistik, manajemen basis data, serta pengelolaan armada
+      (<span class="text-ink">fleet management</span>).
+    </p>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="max-w-6xl mx-auto px-6 py-16 md:py-24 border-t border-line/70">
+  <p class="font-mono text-sm kicker text-muted mb-3">skills</p>
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-10">Kemampuan teknis &amp; operasional</h2>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+    <div class="border border-line bg-panel rounded-lg p-5 glow-border">
+      <div class="flex items-center gap-2.5 mb-4">
+        <i data-lucide="brain-circuit" class="w-5 h-5 text-cyan"></i>
+        <h3 class="font-medium text-ink">Machine Learning &amp; AI</h3>
+      </div>
+      <ul class="space-y-1.5 font-mono text-xs text-muted">
+        <li>XGBoost</li><li>Scikit-Learn</li><li>Sentence-BERT</li><li>TruncatedSVD</li>
+        <li>Multinomial Naive Bayes</li><li>Deep Learning</li><li>Feature Engineering</li>
+        <li>Time-Series Forecasting</li>
+      </ul>
+    </div>
+
+    <div class="border border-line bg-panel rounded-lg p-5 glow-border">
+      <div class="flex items-center gap-2.5 mb-4">
+        <i data-lucide="bar-chart-3" class="w-5 h-5 text-cyan"></i>
+        <h3 class="font-medium text-ink">Data Analytics &amp; Viz</h3>
+      </div>
+      <ul class="space-y-1.5 font-mono text-xs text-muted">
+        <li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li>
+        <li>CRISP-DM</li><li>EDA</li><li>Data Entry</li>
+      </ul>
+    </div>
+
+    <div class="border border-line bg-panel rounded-lg p-5 glow-border">
+      <div class="flex items-center gap-2.5 mb-4">
+        <i data-lucide="code-2" class="w-5 h-5 text-cyan"></i>
+        <h3 class="font-medium text-ink">Programming &amp; Web</h3>
+      </div>
+      <ul class="space-y-1.5 font-mono text-xs text-muted">
+        <li>Python</li><li>SQL</li><li>JavaScript</li><li>HTML5</li>
+        <li>CSS3</li><li>Streamlit</li><li>Flask</li><li>Bootstrap</li>
+      </ul>
+    </div>
+
+    <div class="border border-line bg-panel rounded-lg p-5 glow-border">
+      <div class="flex items-center gap-2.5 mb-4">
+        <i data-lucide="database" class="w-5 h-5 text-cyan"></i>
+        <h3 class="font-medium text-ink">Tools &amp; Database</h3>
+      </div>
+      <ul class="space-y-1.5 font-mono text-xs text-muted">
+        <li>MySQL</li><li>phpMyAdmin</li><li>Git</li><li>GitHub</li><li>Google Colab</li>
+      </ul>
+    </div>
+
+    <div class="border border-line bg-panel rounded-lg p-5 glow-border">
+      <div class="flex items-center gap-2.5 mb-4">
+        <i data-lucide="truck" class="w-5 h-5 text-cyan"></i>
+        <h3 class="font-medium text-ink">Operational &amp; Admin</h3>
+      </div>
+      <ul class="space-y-1.5 font-mono text-xs text-muted">
+        <li>Fleet Management</li><li>Financial &amp; Contract Reporting</li><li>Crisis Management</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="max-w-6xl mx-auto px-6 py-16 md:py-24 border-t border-line/70">
+  <p class="font-mono text-sm kicker text-muted mb-3">projects</p>
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-10">Proyek unggulan</h2>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- Project 1 -->
+    <article class="border border-line bg-panel rounded-lg p-6 flex flex-col glow-border">
+      <span class="font-mono text-[11px] text-indigo-light border border-indigo/40 rounded px-2 py-1 w-fit">
+        Machine Learning &amp; Data Analytics
+      </span>
+      <h3 class="text-lg font-semibold text-ink mt-4">E-Commerce Product Demand Forecasting</h3>
+      <p class="text-muted text-sm mt-2 leading-relaxed">
+        Pemodelan estimasi permintaan produk bulanan time-series berbasis CRISP-DM pada lebih dari 2,9 juta baris
+        data transaksi Kaggle.
+      </p>
+
+      <div class="grid grid-cols-3 gap-2 mt-5 font-mono text-center">
+        <div class="border border-line rounded py-2">
+          <p class="text-cyan text-sm">0.626</p><p class="text-muted text-[10px] mt-1">RMSE</p>
+        </div>
+        <div class="border border-line rounded py-2">
+          <p class="text-cyan text-sm">0.293</p><p class="text-muted text-[10px] mt-1">MAE</p>
+        </div>
+        <div class="border border-line rounded py-2">
+          <p class="text-cyan text-sm">0.630</p><p class="text-muted text-[10px] mt-1">R&sup2;</p>
+        </div>
+      </div>
+
+      <p class="text-muted text-sm mt-4 leading-relaxed">
+        Model XGBoost Regressor terbaik mengungguli Stacking Ensemble &amp; Random Forest, dilengkapi interactive
+        analytics dashboard berisi 18 grafik bisnis.
+      </p>
+
+      <div class="flex flex-wrap gap-1.5 mt-5 font-mono text-[11px] text-muted">
+        <span class="px-2 py-1 border border-line rounded">Python</span>
+        <span class="px-2 py-1 border border-line rounded">XGBoost</span>
+        <span class="px-2 py-1 border border-line rounded">Scikit-Learn</span>
+        <span class="px-2 py-1 border border-line rounded">Pandas</span>
+        <span class="px-2 py-1 border border-line rounded">Seaborn</span>
+      </div>
+
+      <div class="flex gap-3 mt-6 pt-5 border-t border-line">
+        <a href="#" class="text-sm text-ink hover:text-cyan flex items-center gap-1.5">
+          <i data-lucide="github" class="w-4 h-4"></i> GitHub Repo
+        </a>
+        <a href="#" class="text-sm text-ink hover:text-cyan flex items-center gap-1.5">
+          <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+        </a>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="border border-line bg-panel rounded-lg p-6 flex flex-col glow-border">
+      <span class="font-mono text-[11px] text-indigo-light border border-indigo/40 rounded px-2 py-1 w-fit">
+        AI System &amp; Web Application
+      </span>
+      <h3 class="text-lg font-semibold text-ink mt-4">CineMatch AI — Hybrid Movie Recommendation System</h3>
+      <p class="text-muted text-sm mt-2 leading-relaxed">
+        Sistem rekomendasi film berbasis hybrid untuk mengoptimalkan dan mendongkrak visibilitas film lokal
+        Indonesia.
+      </p>
+
+      <div class="flex flex-wrap gap-2 mt-5 font-mono text-[11px]">
+        <span class="px-2.5 py-1.5 border border-line rounded text-muted">Strict Mode</span>
+        <span class="px-2.5 py-1.5 border border-line rounded text-muted">Proportional Quota</span>
+        <span class="px-2.5 py-1.5 border border-line rounded text-muted">Precision / Recall</span>
+        <span class="px-2.5 py-1.5 border border-line rounded text-muted">Blackbox Testing</span>
+        <span class="px-2.5 py-1.5 border border-line rounded text-muted">UAT</span>
+      </div>
+
+      <p class="text-muted text-sm mt-4 leading-relaxed">
+        Menggabungkan TruncatedSVD, Sentence-BERT, dan Multinomial Naive Bayes dengan fitur Strict Mode &amp;
+        alokasi kuota proporsional.
+      </p>
+
+      <div class="flex flex-wrap gap-1.5 mt-5 font-mono text-[11px] text-muted">
+        <span class="px-2 py-1 border border-line rounded">Python</span>
+        <span class="px-2 py-1 border border-line rounded">Streamlit</span>
+        <span class="px-2 py-1 border border-line rounded">SBERT</span>
+        <span class="px-2 py-1 border border-line rounded">TruncatedSVD</span>
+        <span class="px-2 py-1 border border-line rounded">Naive Bayes</span>
+      </div>
+
+      <div class="flex gap-3 mt-6 pt-5 border-t border-line">
+        <a href="#" class="text-sm text-ink hover:text-cyan flex items-center gap-1.5">
+          <i data-lucide="github" class="w-4 h-4"></i> GitHub Repo
+        </a>
+        <a href="#" class="text-sm text-ink hover:text-cyan flex items-center gap-1.5">
+          <i data-lucide="external-link" class="w-4 h-4"></i> Live App
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="max-w-6xl mx-auto px-6 py-16 md:py-24 border-t border-line/70">
+  <p class="font-mono text-sm kicker text-muted mb-3">experience</p>
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-10">Pengalaman kerja</h2>
+
+  <div class="relative pl-8 border-l border-line space-y-12">
+
+    <div class="relative">
+      <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-cyan"></span>
+      <p class="font-mono text-xs text-cyan-light">Okt 2025 – Jul 2026 · Part Time</p>
+      <h3 class="text-lg font-semibold text-ink mt-1.5">Admin Perusahaan Vendor Logistik</h3>
+      <p class="text-muted text-sm">PT Berkah Bersama Logistik — Cibitung, Kab. Bekasi</p>
+      <ul class="mt-3 space-y-1.5 text-muted text-sm leading-relaxed list-disc list-inside">
+        <li>Mengelola basis data operasional &amp; data entry perusahaan secara akurat.</li>
+        <li>Menyusun &amp; menganalisis laporan keuangan operasional dan kontrak kerja sama.</li>
+        <li>Mengatur logistik, penjadwalan, dan koordinasi harian unit kendaraan (Fleet Management).</li>
+        <li>Menangani manajemen krisis darurat armada di lapangan secara responsif.</li>
+      </ul>
+    </div>
+
+    <div class="relative">
+      <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-indigo"></span>
+      <p class="font-mono text-xs text-cyan-light">Jun 2026 · Project-Based</p>
+      <h3 class="text-lg font-semibold text-ink mt-1.5">Contract Logistics Data &amp; Billing Staff</h3>
+      <p class="text-muted text-sm">PT Sinar Sosro (via Shipper.id)</p>
+      <ul class="mt-3 space-y-1.5 text-muted text-sm leading-relaxed list-disc list-inside">
+        <li>Mengelola pencatatan data transaksi pengiriman.</li>
+        <li>Menerbitkan Proforma Invoice dan Surat Jalan (Delivery Notes).</li>
+        <li>Melakukan perhitungan pajak gross-up penagihan.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education" class="max-w-6xl mx-auto px-6 py-16 md:py-24 border-t border-line/70">
+  <p class="font-mono text-sm kicker text-muted mb-3">education</p>
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-10">Pendidikan &amp; pencapaian</h2>
+
+  <div class="border border-line bg-panel rounded-lg p-6 glow-border">
+    <div class="flex flex-wrap items-start justify-between gap-3">
+      <div>
+        <h3 class="text-lg font-semibold text-ink">S1 Informatika (S.Kom.)</h3>
+        <p class="text-muted text-sm mt-1">Universitas Gunadarma · 2022 – 2026</p>
+      </div>
+      <span class="font-mono text-sm text-cyan border border-line rounded px-3 py-1">IPK 3.00 / 4.00</span>
+    </div>
+    <div class="mt-5 pt-5 border-t border-line">
+      <p class="font-mono text-xs text-muted mb-1.5">Tugas Akhir / Skripsi</p>
+      <p class="text-ink text-sm leading-relaxed">
+        Implementasi Machine Learning &amp; Deep Learning pada Sistem Rekomendasi CineMatch AI &amp; Prediksi
+        Permintaan E-Commerce.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact" class="border-t border-line/70">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <p class="font-mono text-sm kicker text-muted mb-3">contact</p>
+    <h2 class="text-2xl sm:text-3xl font-semibold mb-8">Mari terhubung</h2>
+
+    <div class="grid sm:grid-cols-2 gap-6 max-w-2xl">
+      <a href="https://wa.me/6281294923044" class="flex items-center gap-3 border border-line rounded-lg p-4 hover:border-cyan">
+        <i data-lucide="message-circle" class="w-5 h-5 text-cyan"></i>
+        <div>
+          <p class="text-xs text-muted">WhatsApp / Telepon</p>
+          <p class="text-sm text-ink">0812-9492-3044</p>
+        </div>
+      </a>
+
+      <a href="mailto:email.anda@domain.com" class="flex items-center gap-3 border border-line rounded-lg p-4 hover:border-cyan">
+        <i data-lucide="mail" class="w-5 h-5 text-cyan"></i>
+        <div>
+          <p class="text-xs text-muted">Email</p>
+          <p class="text-sm text-ink">email.anda@domain.com</p>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3 border border-line rounded-lg p-4 sm:col-span-2">
+        <i data-lucide="map-pin" class="w-5 h-5 text-cyan"></i>
+        <div>
+          <p class="text-xs text-muted">Domisili</p>
+          <p class="text-sm text-ink">Wanasari, Cibitung, Kab. Bekasi, Jawa Barat</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gap-3 mt-8">
+      <a href="#" aria-label="GitHub" class="w-10 h-10 flex items-center justify-center border border-line rounded-lg hover:border-cyan hover:text-cyan text-muted">
+        <i data-lucide="github" class="w-5 h-5"></i>
+      </a>
+      <a href="#" aria-label="LinkedIn" class="w-10 h-10 flex items-center justify-center border border-line rounded-lg hover:border-cyan hover:text-cyan text-muted">
+        <i data-lucide="linkedin" class="w-5 h-5"></i>
+      </a>
+    </div>
+
+    <p class="font-mono text-xs text-muted mt-14 pt-8 border-t border-line/70">
+      © 2026 Muhammad Daffa Atha Rizq. Dibangun dengan Tailwind CSS.
+    </p>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  lucide.createIcons();
+
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+
+  function setMenu(open) {
+    menuOpen = open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    if (open) {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+      menuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+    } else {
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+    }
+    lucide.createIcons();
+  }
+
+  menuBtn.addEventListener('click', () => setMenu(!menuOpen));
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => setMenu(false));
+  });
+</script>
+
+</body>
+</html>
